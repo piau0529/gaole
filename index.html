@@ -64,7 +64,7 @@
           <div class="col">
             <div class="form-group">
               <label for="msg2">請輸入您的手機號碼</label>
-              <input class="form-control" id="msg2" type="number" v-model="person.msg2" :disabled="person.nick == undefined"/>
+              <input class="form-control" id="msg2" type="number" v-model="person.msg2" pattern="^09\d{8}" :disabled="person.nick == undefined"/>
             </div>
           </div>
         </div>
