@@ -57,24 +57,24 @@
         <div class="two-col">
           <div class="col">
             <div class="form-group">
-              <label for="msg1">請輸入您身分證上的「真實姓名」</label>
-              <input class="form-control" id="msg1" type="text" v-model="person.msg1" :disabled="person.nick == undefined"/>
+              <label for="name">請輸入您身分證上的「真實姓名」</label>
+              <input class="form-control" id="name" type="text" v-model="person.name" :disabled="person.nick == undefined"/>
             </div>
           </div>
           <div class="col">
             <div class="form-group">
-              <label for="msg2">請輸入您的手機號碼</label>
-              <input class="form-control" id="msg2" type="number" v-model="person.msg2" pattern="^09\d{8}" :disabled="person.nick == undefined"/>
+              <label for="phone">請輸入您的手機號碼</label>
+              <input class="form-control" id="phone" type="number" v-model="person.phone" pattern="^09\d{8}" :disabled="person.nick == undefined"/>
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label for="msg3">請輸入您的７—１１取件門市名稱，<a href="https://emap.pcsc.com.tw/" target="_blank">點擊參閱</a></label>
-          <input class="form-control" id="msg3" type="text" v-model="person.msg3" :disabled="person.nick == undefined"/>
+          <label for="store">請輸入您的７—１１取件門市名稱，<a href="https://emap.pcsc.com.tw/" target="_blank">點擊參閱</a></label>
+          <input class="form-control" id="store" type="text" v-model="person.store" :disabled="person.nick == undefined"/>
         </div>
         <div class="form-group">
-          <label for="msg4">請確認上述資料無誤後，輸入「是」後再按「送出」</label>
-          <input class="form-control" id="msg4" type="text" v-model="person.msg4" :disabled="person.nick == undefined"/>
+          <label for="message">請確認上述資料無誤後，輸入「是」後再按「送出」</label>
+          <input class="form-control" id="message" type="text" v-model="person.message" :disabled="person.nick == undefined"/>
         </div>
         <div class="submit"><a href="#" :class="{ disabled: person.nick == undefined }" @click.prevent="submit">送出</a></div>
       </section>
