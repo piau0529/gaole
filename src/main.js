@@ -21,10 +21,10 @@ const FormAutoFill = new Vue({
       id: 'entry.2111259551',
       email: 'entry.1788398348',
       nick: 'entry.34866250',
-      msg1: 'entry.211211733',
-      msg2: 'entry.71595443',
-      msg3: 'entry.986226888',
-      msg4: 'entry.787660417'
+      name: 'entry.211211733',
+      phone: 'entry.2059396740',
+      store: 'entry.986226888',
+      msg: 'entry.787660417'
     },
 
     // loading 效果要不要顯示
@@ -41,7 +41,7 @@ const FormAutoFill = new Vue({
     submit() {
       // 再一次判斷是不是可以送出資料
       if(this.person.nick !== undefined) {
-        let params = `${this.input.id}=${this.person.id}&${this.input.email}=${this.person.email}&${this.input.nick}=${this.person.nick}&${this.input.msg1}=${this.person.msg1}&${this.input.msg2}=${this.person.msg2}&${this.input.msg3}=${this.person.msg3&${this.input.msg4}=${this.person.msg4 || '無'}`;
+        let params = `${this.input.id}=${this.person.id}&${this.input.email}=${this.person.email}&${this.input.nick}=${this.person.nick}&${this.input.name}=${this.person.name}&${this.input.phone}=${this.person.phone}&${this.input.store}=${this.person.store)&${this.input.msg}=${this.person.msessage || '無'}`;
         fetch(this.formAction + '?' + params, {
           method: 'POST'
         }).catch(err => {
