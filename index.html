@@ -4,14 +4,14 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Google表單，輸入ID後自動帶入其它欄位資料 - August - Let's Write</title>
-    <link rel="canonical" href="https://letswritetw.github.io/letswrite-google-forms-id-data/"/>
-    <meta property="og:url" content="https://letswritetw.github.io/letswrite-google-forms-id-data/"/>
+    <title>Gaole公益活動第二屆收件人資料表單</title>
+    <link rel="canonical" href="https://piau0529.github.io/"/>
+    <meta property="og:url" content="https://piau0529.github.io/"/>
     <meta property="fb:app_id" content="2435108729902508"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content="Let's Write"/>
-    <meta property="og:title" content="Google表單，輸入ID後自動帶入其它欄位資料 - August - Let's Write"/>
-    <meta itemprop="name" content="Google表單，輸入ID後自動帶入其它欄位資料 - August - Let's Write"/>
+    <meta property="og:site_name" content="Gaole"/>
+    <meta property="og:title" content="Gaole公益活動第二屆收件人資料表單"/>
+    <meta itemprop="name" content="Gaole公益活動第二屆收件人資料表單"/>
     <meta name="description" content="文章大綱"/>
     <meta property="og:description" content="文章大綱"/>
     <meta itemprop="description" content="文章大綱"/>
@@ -19,7 +19,7 @@
     <meta property="og:image" content="https://letswritetw.github.io/letswrite-google-forms-id-data/fb.jpg"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
-    <meta property="og:image:alt" content="Google表單，輸入ID後自動帶入其它欄位資料"/>
+    <meta property="og:image:alt" content="Gaole公益活動第二屆收件人資料表單""/>
     <link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
     <link rel="stylesheet" href="dist/style.min.css"/>
@@ -47,51 +47,51 @@
       <section class="kv w-640"><img src="https://picsum.photos/640/360" width="640" height="360" alt="主視覺"/></section>
       <section class="form w-640">
         <div class="text-center">
-          <h1>Google表單，輸入ID後自動帶入其它欄位資料</h1>
-          <p>筆記文：<a href="https://letswrite.tw/google-forms-id-data/" target="_blank">Let's Write</a></p>
+          <h1>收件人資料表單，輸入捐款編號後自動帶入其它欄位資料</h1>
         </div>
         <div class="form-group">
-          <label for="main_id">請輸入 ID（0101 - 0112）</label>
-          <input class="form-control" id="main_id" type="number" v-model="id" @input="limitIdLen(id)"/>
+          <label for="main_id">請輸入捐款編號（GENE＋11碼數字）</label>
+          <input class="form-control" id="main_id" type="text" v-model="id" @input="limitIdLen(id)"/>
         </div>
         <div class="two-col">
           <div class="col">
             <div class="form-group">
-              <label for="name">姓名</label>
-              <div class="prepend">
-                <div class="pre male" v-if="person.gender == '男'">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path fill="#00A7E5" d="M18.586 5H14V3h8v8h-2V6.414l-3.537 3.537a7.5 7.5 0 1 1-1.414-1.414L18.586 5z"></path>
-                  </svg>
-                </div>
-                <div class="pre female" v-if="person.gender == '女'">
-                  <female></female>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path fill="#E91E63" d="M11 15.934A7.501 7.501 0 0 1 12 1a7.5 7.5 0 0 1 1 14.934V18h5v2h-5v4h-2v-4H6v-2h5v-2.066z"></path>
-                  </svg>
-                </div>
-                <input class="form-control" id="name" type="text" v-model="person.name" disabled="disabled"/>
+              <label for="email">E-Mail Address</label>
+              <input class="form-control" id="email" type="text" v-model="person.email" disabled="disabled"/>
               </div>
             </div>
           </div>
           <div class="col">
             <div class="form-group">
-              <label for="phone">電話</label>
-              <input class="form-control" id="phone" type="tel" v-model="person.phone" disabled="disabled"/>
+              <label for="nick">Gaole社群暱稱</label>
+              <input class="form-control" id="nick" type="text" v-model="person.nick" disabled="disabled"/>
+            </div>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="col">
+            <div class="form-group">
+              <label for="msg1">請輸入您身分證上的「真實姓名」</label>
+              <input class="form-control" id="msg1" type="text" v-model="person.msg1" :disabled="person.nick == undefined"/>
+            </div>
+          </div>
+        </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="msg2">請輸入您的手機號碼</label>
+              <input class="form-control" id="msg2" type="number" v-model="person.msg2" :disabled="person.nick == undefined"/>
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label for="site">地址</label>
-          <input class="form-control" id="site" type="text" v-model="person.site" disabled="disabled"/>
+          <label for="msg3">請輸入您的７—１１取件門市名稱</label>
+          <input class="form-control" id="msg3" type="text" v-model="person.msg3" :disabled="person.nick == undefined"/>
         </div>
         <div class="form-group">
-          <label for="message">備註</label>
-          <input class="form-control" id="message" type="text" v-model="person.message" :disabled="person.name == undefined"/>
+          <label for="msg4">請確認上述資料無誤後，輸入「是」後再按「送出」</label>
+          <input class="form-control" id="msg4" type="text" v-model="person.msg4" :disabled="person.nick == undefined"/>
         </div>
-        <div class="submit"><a href="#" :class="{ disabled: person.name == undefined }" @click.prevent="submit">送出</a></div>
+        <div class="submit"><a href="#" :class="{ disabled: person.nick == undefined }" @click.prevent="submit">送出</a></div>
       </section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
