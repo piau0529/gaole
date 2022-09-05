@@ -41,7 +41,7 @@ const FormAutoFill = new Vue({
     submit() {
       // 再一次判斷是不是可以送出資料
       if(this.person.nick !== undefined) {
-        let params = `${this.input.id}=${this.person.id}&${this.input.email}=${this.person.email}&${this.input.nick}=${this.person.nick}&${this.input.name}=${this.person.name}&${this.input.phone}=${this.person.phone}&${this.input.store}=${this.person.store)&${this.input.msg}=${this.person.msessage || '無'}`;
+        let params = `${this.input.id}=${this.id}&${this.input.email}=${this.person.email}&${this.input.nick}=${this.person.nick}&${this.input.name}=${this.person.name}&${this.input.phone}=${this.person.phone}&${this.input.store}=${this.person.store)&${this.input.msg}=${this.person.msessage || '無'}`;
         fetch(this.formAction + '?' + params, {
           method: 'POST'
         }).catch(err => {
