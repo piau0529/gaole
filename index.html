@@ -54,7 +54,13 @@
             </div>
           </div>
         </div>
-        <div class="two-col">
+        <div class="three-col">
+          <div class="col">
+            <div class="form-group">
+              <label for="name">請輸入您身分證上的「真實姓名」</label>
+              <input class="form-control" id="name" type="text" v-model="person.name" :disabled="person.nick == undefined"/>
+            </div>
+          </div>
           <div class="col">
             <div class="form-group">
               <label for="name">請輸入您身分證上的「真實姓名」</label>
