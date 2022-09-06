@@ -22,6 +22,7 @@ const FormAutoFill = new Vue({
       email: 'entry.1788398348',
       nick: 'entry.34866250',
       name: 'entry.211211733',
+      lineid:'entry.1850043541',
       phone: 'entry.2059396740',
       store: 'entry.986226888',
       msg: 'entry.787660417'
@@ -41,7 +42,7 @@ const FormAutoFill = new Vue({
     submit() {
       // 再一次判斷是不是可以送出資料
       if(this.person.nick !== undefined) {
-        let params = `${this.input.id}=${this.id}&${this.input.email}=${this.person.email}&${this.input.nick}=${this.person.nick}&${this.input.name}=${this.person.name}&${this.input.phone}=${this.person.phone}&${this.input.store}=${this.person.store)&${this.input.msg}=${this.person.msessage || '無'}`;
+        let params = `${this.input.id}=${this.id}&${this.input.email}=${this.person.email}&${this.input.nick}=${this.person.nick}&${this.input.name}=${this.person.name}&${this.input.lineid}=${this.person.lineid}&${this.input.phone}=${this.person.phone}&${this.input.store}=${this.person.store)&${this.input.msg}=${this.person.msessage || '無'}`;
         fetch(this.formAction + '?' + params, {
           method: 'POST'
         }).catch(err => {
